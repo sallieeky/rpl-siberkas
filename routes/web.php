@@ -24,6 +24,7 @@ Route::get("/login", [AuthController::class, "login"])->name("login")->middlewar
 Route::post("/login", [AuthController::class, "loginPost"]);
 Route::get("/logout", [AuthController::class, "logout"]);
 
+// PPSDA
 Route::get("/ppsda", [UserPpsdaController::class, "index"]);
 
 Route::get("/ppsda/keperluan-pbb", [UserPpsdaController::class, "keperluanPbb"]);
@@ -41,5 +42,11 @@ Route::post("/ppsda/keterangan-memiliki-tanah", [UserPpsdaController::class, "ke
 Route::get("/ppsda/keterangan-njop", [UserPpsdaController::class, "keteranganNjop"]);
 Route::post("/ppsda/keterangan-njop", [UserPpsdaController::class, "keteranganNjopPost"]);
 
+// KESOS
 Route::get("/kesos", [UserKesosController::class, "index"]);
+
+Route::get("/kesos/skck", [UserKesosController::class, "skck"]);
+Route::post("/kesos/skck", [UserKesosController::class, "skckPost"]);
+
+// TAPEM
 Route::get("/tapem", [UserTapemController::class, "index"]);

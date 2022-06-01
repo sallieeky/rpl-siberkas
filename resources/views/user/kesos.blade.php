@@ -13,19 +13,19 @@
               </div>
               <div class="card-body">
                   <h4>Pilih berkas yang ingin diajukan</h4>
-                  <a href="/ppsda/keperluan-pbb">
+                  <a href="/kesos/skck">
                     <div class="callout callout-info">
                       <h5><i class="fas fa-file-alt"></i> <strong>Surat Keterangan Cek Kesehatan</strong></h5>
                       <p>Isi form untuk mengajukan berkas surat keterangan cek kesehatan</p>
                     </div>
                   </a>
-                  <a href="/ppsda/keterangan-harga-bangunan">
+                  <a href="/kesos/keterangan-usaha">
                     <div class="callout callout-info">
                       <h5><i class="fas fa-file-alt"></i> <strong>Keterangan Usaha</strong></h5>
                       <p>Isi form untuk mengajukan berkas keterangan usaha</p>
                     </div>
                   </a>
-                  <a href="/ppsda/keterangan-memiliki-bangunan">
+                  <a href="/kesos/pengantar-nikah">
                     <div class="callout callout-info">
                       <h5><i class="fas fa-file-alt"></i> <strong>Pengantar Nikah</strong></h5>
                       <p>Isi form untuk mengajukan berkas pengantar nikah</p>

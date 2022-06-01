@@ -25,15 +25,15 @@ SPOP dan LPOP, foto copy KTP dan Kartu Keluarga, foto copy surat kepemilikan tan
 2. (keterangan harga bangunan) DONE
 Nama, alamat, pilihan sertifikat/segel/Nomor, nama, tanggal, izin bangunan, alamat objek, jenis bangunan, harga tanah, harga bangunan, lalu dapat memberikan keterangan terkait surat.
 
-3. (keterangan memiliki bangunan)
+3. (keterangan memiliki bangunan) DONE
 Nama, tempat/tanggal lahir, jenis kelamin, alamat, isi alamat: jalan/rt/rw, desa/kelurahan, kecamatan, kabupaten, batas-batas bangunan: sebelah utara bangunan, sebelah timur
 bangunan, sebelah selatan bangunan, sebelah barat bangunan, ukuran bangunan: Panjang, lebar, luas.
 
-4. (keterangan memiliki tanah)
+4. (keterangan memiliki tanah) DONE
 Kelurahan, kecamatan, kabupaten, provinsi, luas, RT, batas-batas tanah: utara, timur,
 selatan, barat.
 
-5. (keterangan NJOP)
+5. (keterangan NJOP) DONE
 Nomor objek pajak, jenis objek pajak, letak objek pajak, didalam datanya terdapat:
 NJOP Bumi              : Luas NJOP PBB/M2, Luas x NJOP
 NJOP Bangunan          : Luas NJOP PBB/M2, Luas x NJOP
@@ -41,14 +41,14 @@ Total NJOP Keseluruhan : Luas x NJOP (NJOP Bumi) + Luas x NJOP (NJOP Bangunan)
 
 ####################### Isi dari surat pengantar KESOS #######################
 
-1. SKCK
-  Nama
-  Tempat dan tanggal lahir
-  Jenis kelamin
-  Pendidikan
-  Warga negara
-  Agama
-  Status perkawinan
+1. SKCK DONE
+  Nama .
+  Tempat dan tanggal lahir 
+  Jenis kelamin 
+  Pendidikan 
+  Warga negara 
+  Agama 
+  Status perkawinan 
   Pekerjaan
   Alamat
   Kelurahan
