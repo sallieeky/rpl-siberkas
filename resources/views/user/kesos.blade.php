@@ -2,23 +2,39 @@
 @section('content')
 
 
-    <div class="row mt-3">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    {{-- table rank staff of the month --}}
-                    <div class="card-title">
+  <div class="row mt-3">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-header">
+                  <div class="card-title">
                       <i class="fas fa-building"></i>
-                        Bidang KESOS
+                      Bidang KESOS
+                  </div>
+              </div>
+              <div class="card-body">
+                  <h4>Pilih berkas yang ingin diajukan</h4>
+                  <a href="/ppsda/keperluan-pbb">
+                    <div class="callout callout-info">
+                      <h5><i class="fas fa-file-alt"></i> <strong>Surat Keterangan Cek Kesehatan</strong></h5>
+                      <p>Isi form untuk mengajukan berkas surat keterangan cek kesehatan</p>
                     </div>
-                </div>
-                <div class="card-body">
-                    <h4>Bidang Pada Dinas</h4>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+                  </a>
+                  <a href="/ppsda/keterangan-harga-bangunan">
+                    <div class="callout callout-info">
+                      <h5><i class="fas fa-file-alt"></i> <strong>Keterangan Usaha</strong></h5>
+                      <p>Isi form untuk mengajukan berkas keterangan usaha</p>
+                    </div>
+                  </a>
+                  <a href="/ppsda/keterangan-memiliki-bangunan">
+                    <div class="callout callout-info">
+                      <h5><i class="fas fa-file-alt"></i> <strong>Pengantar Nikah</strong></h5>
+                      <p>Isi form untuk mengajukan berkas pengantar nikah</p>
+                    </div>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
     
 
 @endsection

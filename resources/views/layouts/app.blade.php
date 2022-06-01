@@ -95,23 +95,122 @@
               </p>
             </a>
             <ul class="nav nav-treeview" style="display: none;">
-              <li class="nav-item">
-                <a href="/ppsda" class="nav-link">
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Bidang PPSDA</p>
+                  <p>
+                    Bidang PPSDA
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
                 </a>
+                <ul class="nav nav-treeview" style="display: none;">
+                  <li class="nav-item">
+                    <a href="/tapem" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>PPSDA</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/ppsda/keperluan-pbb" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>PPSDA - PBB</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/ppsda/keterangan-harga-bangunan" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>PPSDA - KHB</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/ppsda/keterangan-memiliki-bangunan" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>PPSDA - KMB</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/ppsda/keterangan-memiliki-tanah" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>PPSDA - KMT</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/ppsda/keterangan-njop" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>PPSDA - NJOP</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
-              <li class="nav-item">
-                <a href="/kesos" class="nav-link">
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Bidang KESOS</p>
+                  <p>
+                    Bidang KESOS
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
                 </a>
+                <ul class="nav nav-treeview" style="display: none;">
+                  <li class="nav-item">
+                    <a href="/kesos" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>KESOS</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/kesos/skck" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>KESOS - SKCK</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/kesos/keterangan-usaha" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>KESOS - Keterangan Usaha</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/kesos/keterangan-pengantar-nikah" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>KESOS - Pengantar Nikah</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
-              <li class="nav-item">
-                <a href="/tapem" class="nav-link">
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Bidang TAPEM</p>
+                  <p>
+                    Bidang TAPEM
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
                 </a>
+                <ul class="nav nav-treeview" style="display: none;">
+                  <li class="nav-item">
+                    <a href="/tapem" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>TAPEM</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/tapem/formulir-pendaftaran-perpindahan-penduduk" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>TAPEM - FPPP</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/tapem/formulir-meminta-surat-keterangan" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>TAPEM - FMSK</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/tapem/formulir-keterangan-kurang-mampu" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>TAPEM - FKKM</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>

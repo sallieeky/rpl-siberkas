@@ -36,9 +36,10 @@ Route::get("/ppsda/keterangan-memiliki-bangunan", [UserPpsdaController::class, "
 Route::post("/ppsda/keterangan-memiliki-bangunan", [UserPpsdaController::class, "keteranganMemilikiBangunanPost"]);
 
 Route::get("/ppsda/keterangan-memiliki-tanah", [UserPpsdaController::class, "keteranganMemilikiTanah"]);
+Route::post("/ppsda/keterangan-memiliki-tanah", [UserPpsdaController::class, "keteranganMemilikiTanahPost"]);
 
 Route::get("/ppsda/keterangan-njop", [UserPpsdaController::class, "keteranganNjop"]);
-
+Route::post("/ppsda/keterangan-njop", [UserPpsdaController::class, "keteranganNjopPost"]);
 
 Route::get("/kesos", [UserKesosController::class, "index"]);
 Route::get("/tapem", [UserTapemController::class, "index"]);

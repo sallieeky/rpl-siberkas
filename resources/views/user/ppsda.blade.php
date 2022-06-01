@@ -15,31 +15,31 @@
                   <h4>Pilih berkas yang ingin diajukan</h4>
                   <a href="/ppsda/keperluan-pbb">
                     <div class="callout callout-info">
-                      <h5><strong>Keperluan PBB</strong></h5>
+                      <h5><i class="fas fa-file-alt"></i> <strong>Keperluan PBB</strong></h5>
                       <p>Isi form untuk mengajukan berkas keperluan pajak bumi dan bangunan</p>
                     </div>
                   </a>
                   <a href="/ppsda/keterangan-harga-bangunan">
                     <div class="callout callout-info">
-                      <h5><strong>Keterangan Harga Bangunan</strong></h5>
+                      <h5><i class="fas fa-file-alt"></i> <strong>Keterangan Harga Bangunan</strong></h5>
                       <p>Isi form untuk mengajukan berkas keterangan harga bangunan</p>
                     </div>
                   </a>
                   <a href="/ppsda/keterangan-memiliki-bangunan">
                     <div class="callout callout-info">
-                      <h5><strong>Keterangan Memiliki Bangunan</strong></h5>
+                      <h5><i class="fas fa-file-alt"></i> <strong>Keterangan Memiliki Bangunan</strong></h5>
                       <p>Isi form untuk mengajukan berkas keterangan memiliki bangunan</p>
                     </div>
                   </a>
                   <a href="/ppsda/keterangan-memiliki-tanah">
                     <div class="callout callout-info">
-                      <h5><strong>Keterangan Memiliki Tanah</strong></h5>
+                      <h5><i class="fas fa-file-alt"></i> <strong>Keterangan Memiliki Tanah</strong></h5>
                       <p>Isi form untuk mengajukan berkas keterangan memiliki tanah</p>
                     </div>
                   </a>
                   <a href="/ppsda/keterangan-njop">
                     <div class="callout callout-info">
-                      <h5><strong>Keterangan NJOP</strong></h5>
+                      <h5><i class="fas fa-file-alt"></i> <strong>Keterangan NJOP</strong></h5>
                       <p>Isi form untuk mengajukan berkas keterangan NJOP</p>
                     </div>
                   </a>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKeteranganMemilikiBangunansTable extends Migration
+class CreateKeteranganNjopsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,32 +13,29 @@ class CreateKeteranganMemilikiBangunansTable extends Migration
      */
     public function up()
     {
-        Schema::create('keterangan_memiliki_bangunans', function (Blueprint $table) {
+        Schema::create('keterangan_njops', function (Blueprint $table) {
             $table->id();
             $table->string("user_id");
             $table->string("nama");
             $table->string("nik");
             $table->string("ttl");
-            $table->string("jenis_kelamin");
             $table->string("alamat");
             $table->string("no_telp");
 
-            // alamat_bangunan
-            $table->string("jalan_rt_rw");
-            $table->string("desa_kelurahan");
-            $table->string("kecamatan");
-            $table->string("kabupaten");
+            $table->string("no_objek_pajak");
+            $table->string("jenis_objek_pajak");
+            $table->string("letak_objek");
 
-            // batas_bangunan
-            $table->string("sebelah_utara");
-            $table->string("sebelah_timur");
-            $table->string("sebelah_selatan");
-            $table->string("sebelah_barat");
+            // uraian njop bumi
+            $table->string("bumi_luas");
+            $table->string("bumi_njop");
+            $table->string("bumi_luas_njop");
+            // uraian njop bangunan
+            $table->string("bangunan_luas");
+            $table->string("bangunan_njop");
+            $table->string("bangunan_luas_njop");
 
-            // ukuran_bangunan
-            $table->string("panjang");
-            $table->string("lebar");
-            $table->string("luas");
+            $table->string("total_njop");
 
             $table->string("surat_pengantar");
             $table->string("ktp");
@@ -58,6 +55,6 @@ class CreateKeteranganMemilikiBangunansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keterangan_memiliki_bangunans');
+        Schema::dropIfExists('keterangan_njops');
     }
 }
