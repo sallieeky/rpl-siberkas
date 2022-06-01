@@ -1,4 +1,19 @@
 @extends('layouts.app')
+@section("css")
+<style>
+  /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style>
+@endsection
 @section('content')
 
 
@@ -40,13 +55,22 @@
                           </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="jenis_kelamin">Jenis Kelamin</label><span class="text-danger">*</span>
+                              <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" required>
+                                <option value="Laki-laki" {{ old("jenis_kelamin") == "Laki-laki" ? "selected" : "" }}>Laki-laki</option>
+                                <option value="Perempuan" {{ old("jenis_kelamin") == "Perempuan" ? "selected" : "" }}>Perempuan</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
                           <div class="form-group">
                               <label for="alamat">Alamat</label><span class="text-danger">*</span>
                               <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" required value="{{ old("alamat") }}">
                           </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                           <div class="form-group">
                               <label for="no_telp">Nomor Telepon/Hp</label><span class="text-danger">*</span>
                               <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="Nomor Telepon" required value="{{ old("no_telp") }}">
@@ -54,68 +78,132 @@
                         </div>
                       </div>
 
-                      <h4 class="my-3">Data Berkas</h4>
+                      <h4 class="my-3">Data Bangunan</h4>
                       <div class="row">
-                        <div class="col-md-12">
-                          <label for="pilihan">ID Surat</label><span class="text-danger">*</span>
-                          <div class="input-group mb-3">
-                            <select class="btn btn-outline-secondary dropdown-toggle" id="pilihan" name="pilihan" required>
-                              <option value="Sertifikat">Sertifikat</option>
-                              <option value="Segel">Segel</option>
-                              <option value="Nomor">Nomor</option>
-                            </select>
-                            <input type="text" name="nilai" class="form-control" aria-label="Text input with dropdown button">
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="card-title">
+                              Alamat Bangunan
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="jalan_rt_rw">Jalan/RT/RW</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="jalan_rt_rw" name="jalan_rt_rw" placeholder="Jalan/RT/RW" required value="{{ old("jalan_rt_rw") }}">
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="desa_kelurahan">Desa/Kelurahan</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="desa_kelurahan" name="desa_kelurahan" placeholder="Desa/Kelurahan" required value="{{ old("desa_kelurahan") }}">
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="kecamatan">Kecamatan</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Kecamatan" required value="{{ old("kecamatan") }}">
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="kabupaten">Kabupaten</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="kabupaten" name="kabupaten" placeholder="Kabupaten" required value="{{ old("kabupaten") }}">
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="nama_pemilik">Nama Pemilik</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="nama_pemilik" name="nama_pemilik" placeholder="Nama Pemilik" required value="{{ old("nama_pemilik") }}">
+                        
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="card-title">
+                              Batas Bangunan
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sebelah_utara">Sebelah Utara</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="sebelah_utara" name="sebelah_utara" placeholder="Sebelah Utara" required value="{{ old("sebelah_utara") }}">
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sebelah_timur">Sebelah Timur</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="sebelah_timur" name="sebelah_timur" placeholder="Sebelah Timur" required value="{{ old("sebelah_timur") }}">
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sebelah_selatan">Sebelah Selatan</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="sebelah_selatan" name="sebelah_selatan" placeholder="Sebelah Selatan" required value="{{ old("sebelah_selatan") }}">
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sebelah_barat">Sebelah Barat</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="sebelah_barat" name="sebelah_barat" placeholder="Sebelah Barat" required value="{{ old("sebelah_barat") }}">
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="tanggal">Tanggal</label><span class="text-danger">*</span>
-                              <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="Contoh: 1 Januari 1995" required value="{{ old("tanggal") }}">
+
+                        {{-- card input ukuran_bangunan(panjang,lebar,luas) --}}
+                        <div class="card">
+                          <div class="card-header">
+                            <div class="card-title">
+                              Ukuran Bangunan
+                            </div>
                           </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="izin_bangunan">Izin Bangunan</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="izin_bangunan" name="izin_bangunan" placeholder="Izin Bangunan" required value="{{ old("izin_bangunan") }}">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="panjang">Panjang</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control @error('panjang') is-invalid @enderror" id="panjang" name="panjang" placeholder="Panjang" required value="{{ old("panjang") }}">
+                                    @error('panjang')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="lebar">Lebar</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control @error('panjang') is-invalid @enderror" id="lebar" name="lebar" placeholder="Lebar" required value="{{ old("lebar") }}">
+                                    @error('lebar')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="luas">Luas</label><span class="text-danger">*</span>
+                                    <input type="text" class="form-control @error('panjang') is-invalid @enderror" id="luas" name="luas" placeholder="Luas" required value="{{ old("luas") }}">
+                                    @error('luas')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="alamat_objek">Alamat Objek</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="alamat_objek" name="alamat_objek" placeholder="Alamat Objek" required value="{{ old("alamat_objek") }}">
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="jenis_bangunan">Jenis Bangunan</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="jenis_bangunan" name="jenis_bangunan" placeholder="Jenis Bangunan" required value="{{ old("jenis_bangunan") }}">
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="harga_tanah">Harga Tanah</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="harga_tanah" name="harga_tanah" placeholder="Harga Tanah" required value="{{ old("harga_tanah") }}">
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="harga_bangunan">Harga Bangunan</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="harga_bangunan" name="harga_bangunan" placeholder="Harga Bangunan" required value="{{ old("harga_bangunan") }}">
-                          </div>
-                        </div>
+
                       </div>
 
                       <h4 class="my-3">Berkas Pendukung</h4>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label for="surat_pengantar">Surat Pengantar</label><span class="text-danger">*</span>
+                              <label for="surat_pengantar">Surat Pengantar Dari RT</label><span class="text-danger">*</span>
                               <input type="file" class="form-control" id="surat_pengantar" accept=".pdf, image/*" name="surat_pengantar_file" placeholder="Surat Pengantar" required value="{{ old("surat_pengantar_file") }}">
                           </div>
                         </div>

@@ -116,7 +116,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label for="surat_pengantar">Surat Pengantar</label><span class="text-danger">*</span>
+                              <label for="surat_pengantar">Surat Pengantar Dari RT</label><span class="text-danger">*</span>
                               <input type="file" class="form-control" id="surat_pengantar" accept=".pdf, image/*" name="surat_pengantar_file" placeholder="Surat Pengantar" required value="{{ old("surat_pengantar_file") }}">
                           </div>
                         </div>

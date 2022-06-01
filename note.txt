@@ -22,14 +22,12 @@ Alamat Objek, Keperluan, lalu diberikan keterangan jika ingin melakukan penyeles
 lebih lanjut terkait surat pengantar diaharapkan untuk melakukan hal berikut: mengisi
 SPOP dan LPOP, foto copy KTP dan Kartu Keluarga, foto copy surat kepemilikan tanah.
 
-2. (keterangan harga bangunan)
+2. (keterangan harga bangunan) DONE
 Nama, alamat, pilihan sertifikat/segel/Nomor, nama, tanggal, izin bangunan, alamat objek, jenis bangunan, harga tanah, harga bangunan, lalu dapat memberikan keterangan terkait surat.
 
 3. (keterangan memiliki bangunan)
-Nama, tempat/tanggal lahir, jenis kelamin, alamat, isi alamat: jalan/rt/rw, desa/kelurahan,
-kecamatan, kabupaten, batas-batas bangunan: sebelah utara bangunan, sebelah timur
-bangunan, sebelah selatan bangunan, sebelah barat bangunan, ukuran bangunan: Panjang,
-lebar, luas.
+Nama, tempat/tanggal lahir, jenis kelamin, alamat, isi alamat: jalan/rt/rw, desa/kelurahan, kecamatan, kabupaten, batas-batas bangunan: sebelah utara bangunan, sebelah timur
+bangunan, sebelah selatan bangunan, sebelah barat bangunan, ukuran bangunan: Panjang, lebar, luas.
 
 4. (keterangan memiliki tanah)
 Kelurahan, kecamatan, kabupaten, provinsi, luas, RT, batas-batas tanah: utara, timur,
