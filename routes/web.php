@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserKesosController;
+use App\Http\Controllers\UserPpsdaController;
+use App\Http\Controllers\UserTapemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +18,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DashboardController::class, "home"]);
 
-Route::get("/login", [AuthController::class, "login"]);
+Route::get("/login", [AuthController::class, "login"])->name("login")->middleware("guest");
 Route::post("/login", [AuthController::class, "loginPost"]);
+Route::get("/logout", [AuthController::class, "logout"]);
+
+Route::get("/ppsda", [UserPpsdaController::class, "index"]);
+
+Route::get("/ppsda/keperluan-pbb", [UserPpsdaController::class, "keperluanPbb"]);
+Route::post("/ppsda/keperluan-pbb", [UserPpsdaController::class, "keperluanPbbPost"]);
+
+Route::get("/ppsda/keterangan-harga-bangunan", [UserPpsdaController::class, "keteranganHargaBangunan"]);
+Route::post("/ppsda/keterangan-harga-bangunan", [UserPpsdaController::class, "keteranganHargaBangunanPost"]);
+
+Route::get("/ppsda/keterangan-memiliki-bangunan", [UserPpsdaController::class, "keteranganMemilikiBangunan"]);
+Route::post("/ppsda/keterangan-memiliki-bangunan", [UserPpsdaController::class, "keteranganMemilikiBangunanPost"]);
+
+Route::get("/ppsda/keterangan-memiliki-tanah", [UserPpsdaController::class, "keteranganMemilikiTanah"]);
+
+Route::get("/ppsda/keterangan-njop", [UserPpsdaController::class, "keteranganNjop"]);
+
+
+Route::get("/kesos", [UserKesosController::class, "index"]);
+Route::get("/tapem", [UserTapemController::class, "index"]);

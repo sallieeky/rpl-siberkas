@@ -1,0 +1,143 @@
+role
+1. admin
+2. pengguna
+
+pengguna (warga)
+1. halaman awal habis login, pengajuan berkas (redirect ke halaman berdasarkan bidang) sama history
+2. dihalaman tiap-tiap bidang dibikin button buat pindah ke halaman masing-masing form
+3. tiap form ada input file surat pengantar RT + foto ktp
+4. tracking dalam bentuk table
+5. admin berdasarkan bidang
+6. login nik password
+7. kalau sdh ngajuin berkas sama sudah selesai ada email 
+8. profile first login ubah password nambah email.
+9. pengajuan bisa ditolak
+
+####################### Isi dari surat pengantar PPSDA #######################
+
+1. (keperluan PBB) DONE
+Nama, NIK, Tempat/Tanggal Lahir, Alamat Wajib Pajak, No HP/Telepon, Nama Alas Hak
+(pilihannya: SKT / PLH / Sertifikat), Nomor Alas Hak, Titik Koordinat Objek/No Id,
+Alamat Objek, Keperluan, lalu diberikan keterangan jika ingin melakukan penyelesaian
+lebih lanjut terkait surat pengantar diaharapkan untuk melakukan hal berikut: mengisi
+SPOP dan LPOP, foto copy KTP dan Kartu Keluarga, foto copy surat kepemilikan tanah.
+
+2. (keterangan harga bangunan)
+Nama, alamat, pilihan sertifikat/segel/Nomor, nama, tanggal, izin bangunan, alamat objek, jenis bangunan, harga tanah, harga bangunan, lalu dapat memberikan keterangan terkait surat.
+
+3. (keterangan memiliki bangunan)
+Nama, tempat/tanggal lahir, jenis kelamin, alamat, isi alamat: jalan/rt/rw, desa/kelurahan,
+kecamatan, kabupaten, batas-batas bangunan: sebelah utara bangunan, sebelah timur
+bangunan, sebelah selatan bangunan, sebelah barat bangunan, ukuran bangunan: Panjang,
+lebar, luas.
+
+4. (keterangan memiliki tanah)
+Kelurahan, kecamatan, kabupaten, provinsi, luas, RT, batas-batas tanah: utara, timur,
+selatan, barat.
+
+5. (keterangan NJOP)
+Nomor objek pajak, jenis objek pajak, letak objek pajak, didalam datanya terdapat:
+NJOP Bumi              : Luas NJOP PBB/M2, Luas x NJOP
+NJOP Bangunan          : Luas NJOP PBB/M2, Luas x NJOP
+Total NJOP Keseluruhan : Luas x NJOP (NJOP Bumi) + Luas x NJOP (NJOP Bangunan)
+
+####################### Isi dari surat pengantar KESOS #######################
+
+1. SKCK
+  Nama
+  Tempat dan tanggal lahir
+  Jenis kelamin
+  Pendidikan
+  Warga negara
+  Agama
+  Status perkawinan
+  Pekerjaan
+  Alamat
+  Kelurahan
+  Kecamatan
+  Maksud minta surat ini
+  Berlaku selama
+
+2. KETERANGAN USAHA
+  Nama lengkap
+  Tempat / tgl lahir
+  NIK
+  Jenis kelamin
+  Agama 
+  Status perkawinan
+  Pekerjaan
+  Alamat
+  Bidang usaha
+  Alamat tempat usaha
+  Mulai usaha
+
+3. PENGANTAR NIKAH
+  Nama
+  Nomor induk kependudukan
+  Jenis kelamin
+  Tempat dan tanggal lahir
+  Kewarganegaraan
+  Agama
+  Pekerjaan
+  Alamat
+  Status perkawinan
+
+  a. adalah benar anak dari perkawinan seorang pria
+    Nama
+    Nomor induk kependudukan
+    Jenis kelamin
+    Tempat dan tanggal lahir
+    Kewarganegaraan
+    Agama
+    Pekerjaan
+    Alamat
+
+  b. dengan seorang wanita
+    Nama
+    Nomor induk kependudukan
+    Jenis kelamin
+    Tempat dan tanggal lahir
+    Kewarganegaraan
+    Agama
+    Pekerjaan
+    Alamat
+
+####################### Isi dari surat pengantar TAPEM #######################
+
+1. formulir pendaftaraan perpindahan penduduk
+  no kk
+  nama lengkap pemohon
+  nik
+  jenis permohonan
+  alaamat jelas
+  alamat pindah
+  alasan pindah
+  jenis kepindahan
+  anggota keluarga yang tidak pindah
+  anggota keluarga yang pindah
+  daftar anggota keluarga yang pindah 
+
+2. formulir meminta surat keterangan
+  nama lengkap
+  tempat/tanggal lahir
+  jenis kelamin
+  agama
+  status perkawinan
+  pekerjaan
+  alamat KTP
+  keperluan 
+
+3. formulir keterangan kurang mampu
+  a. data orang tua :
+    nama
+    tempat,tanggal lahir
+    jenis kelamin
+    agama
+    pekerjaan 
+    alamat
+
+  b. data anak:
+    nama
+    jenis kelamin 
+    tempat, tanggal lahir
+    sekolah

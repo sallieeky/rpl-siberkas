@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard Pemilihan Staff Terbaik</title>
+  <title>Dashboard Sistem Informasi Berkas</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -66,7 +66,7 @@
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
       <img src="{{ asset('template') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Staff Terbaik</span>
+      <span class="brand-text font-weight-light">SIBERKAS</span>
     </a>
 
     <!-- Sidebar -->
@@ -85,25 +85,45 @@
             </a>
           </li>
           <span class="border-bottom"></span>
-          @if(Auth::user()->role == "super")
-          <li class="nav-item mt-2">
-            <a href="/kelola-admin" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              {{-- <i class="nav-icon fas fa-tachometer-alt"></i> --}}
+              <i class="nav-icon fas fa-building"></i>
               <p>
-                Kelola Admin
+                Bidang
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="display: none;">
+              <li class="nav-item">
+                <a href="/ppsda" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Bidang PPSDA</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/kesos" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Bidang KESOS</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/tapem" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Bidang TAPEM</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <span class="border-bottom"></span>
+          <li class="nav-item mt-2">
+            <a href="/history" class="nav-link">
+              <i class="nav-icon fas fa-history"></i>
+              <p>
+                History
               </p>
             </a>
           </li>
-          @else
-          <li class="nav-item mt-2">
-            <a href="/kelola-staff" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                Kelola Staff
-              </p>
-            </a>
-          </li>
-          @endif
           <span class="border-bottom"></span>
           <li class="nav-item mt-2">
             <a href="/logout" class="nav-link">

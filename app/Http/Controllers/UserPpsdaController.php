@@ -1,0 +1,118 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\KeteranganHargaBangunan;
+use App\Models\Pbb;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class UserPpsdaController extends Controller
+{
+    public function index()
+    {
+        return view("user.ppsda");
+    }
+
+    public function keperluanPbb()
+    {
+        return view("user.ppsda.keperluan-pbb");
+    }
+    public function keperluanPbbPost(Request $request)
+    {
+        $request->validate([
+            "nama" => "required",
+            "nik" => "required|numeric",
+            "ttl" => "required",
+            "alamat" => "required",
+            "no_telp" => "required",
+            "nama_alas_hak" => "required",
+            "no_alas_hak" => "required",
+            "titik_koordinat_objek" => "required",
+            "alamat_objek" => "required",
+            "keperluan" => "required",
+            "spop_file" => "required",
+            "lpop_file" => "required",
+            "ktp_file" => "required",
+            "kk_file" => "required",
+            "kepemilikan_tanah_file" => "required",
+            "surat_pengantar_file" => "required",
+        ]);
+
+        $request->file("spop_file")->storeAs("public/ppsda/spop", $request->file("spop_file")->getClientOriginalName());
+        $request->file("lpop_file")->storeAs("public/ppsda/lpop", $request->file("lpop_file")->getClientOriginalName());
+        $request->file("ktp_file")->storeAs("public/ppsda/ktp", $request->file("ktp_file")->getClientOriginalName());
+        $request->file("kk_file")->storeAs("public/ppsda/kk", $request->file("kk_file")->getClientOriginalName());
+        $request->file("kepemilikan_tanah_file")->storeAs("public/ppsda/kepemilikan_tanah", $request->file("kepemilikan_tanah_file")->getClientOriginalName());
+        $request->file("surat_pengantar_file")->storeAs("public/ppsda/surat_pengantar", $request->file("surat_pengantar_file")->getClientOriginalName());
+
+        $request["spop"] = $request->file("spop_file")->getClientOriginalName();
+        $request["lpop"] = $request->file("lpop_file")->getClientOriginalName();
+        $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
+        $request["kk"] = $request->file("kk_file")->getClientOriginalName();
+        $request["kepemilikan_tanah"] = $request->file("kepemilikan_tanah_file")->getClientOriginalName();
+        $request["surat_pengantar"] = $request->file("surat_pengantar_file")->getClientOriginalName();
+
+        // $request["user_id"] = Auth::user()->id;
+        $request["user_id"] = 0;
+
+        Pbb::create($request->all());
+        return back()->with("pesan", "Pengajuan berkas berhasil");
+    }
+
+    public function keteranganHargaBangunan()
+    {
+        return view("user.ppsda.keterangan-harga-bangunan");
+    }
+    public function keteranganHargaBangunanPost(Request $request)
+    {
+        $request->validate([
+            "nama" => "required",
+            "nik" => "required|numeric",
+            "ttl" => "required",
+            "alamat" => "required",
+            "no_telp" => "required",
+            "pilihan" => "required",
+            "nilai" => "required",
+            "nama_pemilik" => "required",
+            "tanggal" => "required",
+            "izin_bangunan" => "required",
+            "alamat_objek" => "required",
+            "jenis_bangunan" => "required",
+            "harga_tanah" => "required",
+            "harga_bangunan" => "required",
+            "surat_pengantar_file" => "required",
+            "ktp_file" => "required",
+        ]);
+
+        $request->file("surat_pengantar_file")->storeAs("public/ppsda/surat_pengantar", $request->file("surat_pengantar_file")->getClientOriginalName());
+        $request->file("ktp_file")->storeAs("public/ppsda/ktp", $request->file("ktp_file")->getClientOriginalName());
+
+        // $request["user_id"] = Auth::user()->id;
+        $request["user_id"] = 0;
+        $request["surat_pengantar"] = $request->file("surat_pengantar_file")->getClientOriginalName();
+        $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
+
+        KeteranganHargaBangunan::create($request->all());
+        return back()->with("pesan", "Pengajuan berkas berhasil");
+    }
+
+    public function keteranganMemilikiBangunan()
+    {
+        return view("user.ppsda.keterangan-memiliki-bangunan");
+    }
+    public function keteranganMemilikiBangunanPost(Request $request)
+    {
+        // return view("user.ppsda.keterangan-memiliki-bangunan");
+    }
+
+    public function keteranganMemilikiTanah()
+    {
+        return view("user.ppsda.keterangan-memiliki-tanah");
+    }
+
+    public function keteranganNjop()
+    {
+        return view("user.ppsda.keterangan-njop");
+    }
+}
