@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [DashboardController::class, "home"]);
+Route::get('/history', [DashboardController::class, "history"]);
 
 Route::get("/login", [AuthController::class, "login"])->name("login")->middleware("guest");
 Route::post("/login", [AuthController::class, "loginPost"]);
@@ -50,6 +51,9 @@ Route::post("/kesos/skck", [UserKesosController::class, "skckPost"]);
 
 Route::get("/kesos/keterangan-usaha", [UserKesosController::class, "keteranganUsaha"]);
 Route::post("/kesos/keterangan-usaha", [UserKesosController::class, "keteranganUsahaPost"]);
+
+Route::get("/kesos/pengantar-nikah", [UserKesosController::class, "pengantarNikah"]);
+Route::post("/kesos/pengantar-nikah", [UserKesosController::class, "pengantarNikahPost"]);
 
 // TAPEM
 Route::get("/tapem", [UserTapemController::class, "index"]);

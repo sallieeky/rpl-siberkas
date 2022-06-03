@@ -1,3 +1,9 @@
+status
+  Diterima
+  Diperiksa
+  Ditolak
+  Selesai
+
 role
 1. admin
 2. pengguna
@@ -56,7 +62,7 @@ Total NJOP Keseluruhan : Luas x NJOP (NJOP Bumi) + Luas x NJOP (NJOP Bangunan)
   Maksud minta surat ini
   Berlaku selama
 
-2. KETERANGAN USAHA
+2. KETERANGAN USAHA DONE
   Nama lengkap
   Tempat / tgl lahir
   NIK
@@ -83,7 +89,7 @@ Total NJOP Keseluruhan : Luas x NJOP (NJOP Bumi) + Luas x NJOP (NJOP Bangunan)
   a. adalah benar anak dari perkawinan seorang pria
     Nama
     Nomor induk kependudukan
-    Jenis kelamin
+    // Jenis kelamin
     Tempat dan tanggal lahir
     Kewarganegaraan
     Agama
@@ -93,7 +99,7 @@ Total NJOP Keseluruhan : Luas x NJOP (NJOP Bumi) + Luas x NJOP (NJOP Bangunan)
   b. dengan seorang wanita
     Nama
     Nomor induk kependudukan
-    Jenis kelamin
+    // Jenis kelamin
     Tempat dan tanggal lahir
     Kewarganegaraan
     Agama

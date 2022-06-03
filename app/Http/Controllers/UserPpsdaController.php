@@ -56,8 +56,8 @@ class UserPpsdaController extends Controller
         $request["kepemilikan_tanah"] = $request->file("kepemilikan_tanah_file")->getClientOriginalName();
         $request["surat_pengantar"] = $request->file("surat_pengantar_file")->getClientOriginalName();
 
-        // $request["user_id"] = Auth::user()->id;
-        $request["user_id"] = 0;
+        $request["user_id"] = Auth::user()->id;
+        // $request["user_id"] = 0;
 
         Pbb::create($request->all());
         return back()->with("pesan", "Pengajuan berkas berhasil");
@@ -91,8 +91,8 @@ class UserPpsdaController extends Controller
         $request->file("surat_pengantar_file")->storeAs("public/ppsda/surat_pengantar", $request->file("surat_pengantar_file")->getClientOriginalName());
         $request->file("ktp_file")->storeAs("public/ppsda/ktp", $request->file("ktp_file")->getClientOriginalName());
 
-        // $request["user_id"] = Auth::user()->id;
-        $request["user_id"] = 0;
+        $request["user_id"] = Auth::user()->id;
+        // $request["user_id"] = 0;
         $request["surat_pengantar"] = $request->file("surat_pengantar_file")->getClientOriginalName();
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
@@ -131,8 +131,8 @@ class UserPpsdaController extends Controller
         $request->file("surat_pengantar_file")->storeAs("public/ppsda/surat_pengantar", $request->file("surat_pengantar_file")->getClientOriginalName());
         $request->file("ktp_file")->storeAs("public/ppsda/ktp", $request->file("ktp_file")->getClientOriginalName());
 
-        // $request["user_id"] = Auth::user()->id;
-        $request["user_id"] = 0;
+        $request["user_id"] = Auth::user()->id;
+        // $request["user_id"] = 0;
         $request["surat_pengantar"] = $request->file("surat_pengantar_file")->getClientOriginalName();
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
@@ -169,8 +169,8 @@ class UserPpsdaController extends Controller
         $request->file("surat_pengantar_file")->storeAs("public/ppsda/surat_pengantar", $request->file("surat_pengantar_file")->getClientOriginalName());
         $request->file("ktp_file")->storeAs("public/ppsda/ktp", $request->file("ktp_file")->getClientOriginalName());
 
-        // $request["user_id"] = Auth::user()->id;
-        $request["user_id"] = 0;
+        $request["user_id"] = Auth::user()->id;
+        // $request["user_id"] = 0;
         $request["surat_pengantar"] = $request->file("surat_pengantar_file")->getClientOriginalName();
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
@@ -209,8 +209,8 @@ class UserPpsdaController extends Controller
         $request->file("surat_pengantar_file")->storeAs("public/ppsda/surat_pengantar", $request->file("surat_pengantar_file")->getClientOriginalName());
         $request->file("ktp_file")->storeAs("public/ppsda/ktp", $request->file("ktp_file")->getClientOriginalName());
 
-        // $request["user_id"] = Auth::user()->id;
-        $request["user_id"] = 0;
+        $request["user_id"] = Auth::user()->id;
+        // $request["user_id"] = 0;
         $request["surat_pengantar"] = $request->file("surat_pengantar_file")->getClientOriginalName();
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
