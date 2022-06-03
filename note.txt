@@ -108,7 +108,7 @@ Total NJOP Keseluruhan : Luas x NJOP (NJOP Bumi) + Luas x NJOP (NJOP Bangunan)
 
 ####################### Isi dari surat pengantar TAPEM #######################
 
-1. formulir pendaftaraan perpindahan penduduk
+1. formulir pendaftaraan perpindahan penduduk DONE
   no kk
   nama lengkap pemohon
   nik
@@ -121,7 +121,7 @@ Total NJOP Keseluruhan : Luas x NJOP (NJOP Bumi) + Luas x NJOP (NJOP Bangunan)
   anggota keluarga yang pindah
   daftar anggota keluarga yang pindah 
 
-2. formulir meminta surat keterangan
+2. formulir meminta surat keterangan 
   nama lengkap
   tempat/tanggal lahir
   jenis kelamin
@@ -131,7 +131,7 @@ Total NJOP Keseluruhan : Luas x NJOP (NJOP Bumi) + Luas x NJOP (NJOP Bangunan)
   alamat KTP
   keperluan 
 
-3. formulir keterangan kurang mampu
+3. formulir keterangan kurang mampu 
   a. data orang tua :
     nama
     tempat,tanggal lahir

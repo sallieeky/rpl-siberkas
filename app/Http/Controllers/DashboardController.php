@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FormulirMemintaSuratKeterangan;
+use App\Models\FormulirPendaftaranPerpindahanPenduduk;
 use App\Models\KeteranganHargaBangunan;
 use App\Models\KeteranganMemilikiBangunan;
 use App\Models\KeteranganMemilikiTanah;
@@ -63,7 +65,17 @@ class DashboardController extends Controller
                 "bidang" => "KESOS",
                 "nama" => "Pengantar Nikah",
                 "data" => PengantarNikah::where("user_id", auth()->user()->id)->get()
-            ]
+            ],
+            "formulir_pendaftaran_perpindahan_penduduk" => [
+                "bidang" => "TAPEM",
+                "nama" => "Formulir Pendaftaran Perpindahan Penduduk",
+                "data" => FormulirPendaftaranPerpindahanPenduduk::where("user_id", auth()->user()->id)->get()
+            ],
+            "formulir_meminta_surat_keterangan" => [
+                "bidang" => "TAPEM",
+                "nama" => "Formulir Meminta Surat Keterangan",
+                "data" => FormulirMemintaSuratKeterangan::where("user_id", auth()->user()->id)->get()
+            ],
         ];
         // return $data;
         return view("user.history", compact("data"));
