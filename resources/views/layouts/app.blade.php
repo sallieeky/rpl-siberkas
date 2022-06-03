@@ -246,6 +246,16 @@ input[type=number] {
             </a>
           </li>
           <span class="border-bottom"></span>
+          {{-- halaman admin --}}
+          <li class="nav-item mt-2">
+            <a href="/berkas-masuk" class="nav-link">
+              <i class="nav-icon fas fa-file-upload"></i>
+              <p>
+                Berkas Masuk
+              </p>
+            </a>
+          </li>
+          <span class="border-bottom"></span>
           <li class="nav-item mt-2">
             <a href="/logout" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>

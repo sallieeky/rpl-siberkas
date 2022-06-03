@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserKesosController;
 use App\Http\Controllers\UserPpsdaController;
 use App\Http\Controllers\UserTapemController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -65,6 +67,10 @@ Route::middleware(['auth'])->group(function () {
 
   Route::get("/tapem/formulir-keterangan-kurang-mampu", [UserTapemController::class, "formulirKeteranganKurangMampu"]);
   Route::post("/tapem/formulir-keterangan-kurang-mampu", [UserTapemController::class, "formulirKeteranganKurangMampuPost"]);
+
+  // ADMIN
+  Route::get("/berkas-masuk", [AdminController::class, "berkasMasuk"]);
+  Route::post("/upload-berkas-balasan", [AdminController::class, "uploadBerkasBalasan"]);
 });
 
 
