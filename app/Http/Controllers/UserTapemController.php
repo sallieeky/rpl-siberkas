@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FormulirKeteranganKurangMampu;
 use App\Models\FormulirMemintaSuratKeterangan;
 use App\Models\FormulirPendaftaranPerpindahanPenduduk;
 use Illuminate\Http\Request;
@@ -82,5 +83,40 @@ class UserTapemController extends Controller
     public function formulirKeteranganKurangMampu()
     {
         return view("user.tapem.formulir-keterangan-kurang-mampu");
+    }
+    public function formulirKeteranganKurangMampuPost(Request $request)
+    {
+        $request->validate([
+            "nama" => "required",
+            "nik" => "required",
+            "ttl" => "required",
+            "alamat" => "required",
+            "no_telp" => "required",
+
+            "nama_ortu" => "required",
+            "ttl_ortu" => "required",
+            "jenis_kelamin_ortu" => "required",
+            "agama_ortu" => "required",
+            "pekerjaan_ortu" => "required",
+            "alamat_ortu" => "required",
+
+            "nama_anak" => "required",
+            "jenis_kelamin_anak" => "required",
+            "ttl_anak" => "required",
+            "sekolah_anak" => "required",
+
+            "surat_pengantar_file" => "required",
+            "ktp_file" => "required",
+        ]);
+
+        $request->file("surat_pengantar_file")->storeAs("public/tapem/surat_pengantar", $request->file("surat_pengantar_file")->getClientOriginalName());
+        $request->file("ktp_file")->storeAs("public/tapem/ktp", $request->file("ktp_file")->getClientOriginalName());
+
+        $request["surat_pengantar"] = $request->file("surat_pengantar_file")->getClientOriginalName();
+        $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
+        $request["user_id"] = auth()->user()->id;
+
+        FormulirKeteranganKurangMampu::create($request->all());
+        return back()->with("pesan", "Formulir Keterangan Kurang Mampu Berhasil Dikirim, Silahkan Tunggu Konfirmasi dari Admin");
     }
 }

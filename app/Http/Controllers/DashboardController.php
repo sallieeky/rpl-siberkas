@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FormulirKeteranganKurangMampu;
 use App\Models\FormulirMemintaSuratKeterangan;
 use App\Models\FormulirPendaftaranPerpindahanPenduduk;
 use App\Models\KeteranganHargaBangunan;
@@ -75,6 +76,11 @@ class DashboardController extends Controller
                 "bidang" => "TAPEM",
                 "nama" => "Formulir Meminta Surat Keterangan",
                 "data" => FormulirMemintaSuratKeterangan::where("user_id", auth()->user()->id)->get()
+            ],
+            "formulir_keterangan_kurang_mampu" => [
+                "bidang" => "TAPEM",
+                "nama" => "Formulir Keterangan Kurang Mampu",
+                "data" => FormulirKeteranganKurangMampu::where("user_id", auth()->user()->id)->get()
             ],
         ];
         // return $data;

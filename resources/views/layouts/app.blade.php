@@ -183,7 +183,7 @@ input[type=number] {
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="/kesos/keterangan-pengantar-nikah" class="nav-link">
+                    <a href="/kesos/pengantar-nikah" class="nav-link">
                       <i class="far fa-dot-circle nav-icon"></i>
                       <p>KESOS - Pengantar Nikah</p>
                     </a>
