@@ -11,6 +11,7 @@ use App\Models\KeteranganMemilikiTanah;
 use App\Models\KeteranganNjop;
 use App\Models\KeteranganPengantarNikah;
 use App\Models\KeteranganUsaha;
+use App\Models\KritikSaran;
 use App\Models\Pbb;
 use App\Models\PengantarNikah;
 use App\Models\Skck;
@@ -85,5 +86,21 @@ class DashboardController extends Controller
         ];
         // return $data;
         return view("user.history", compact("data"));
+    }
+
+    public function kritikDanSaran()
+    {
+        return view("user.kritik-dan-saran");
+    }
+    public function kritikDanSaranPost(Request $request)
+    {
+        $request->validate([
+            "kritik" => "required",
+            "saran" => "required"
+        ]);
+
+        $request["user_id"] = auth()->user()->id;
+        KritikSaran::create($request->all());
+        return back()->with("pesan", "Kritik dan saran berhasil dikirim");
     }
 }

@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth'])->group(function () {
   Route::get('/', [DashboardController::class, "home"])->name('home');
   Route::get('/history', [DashboardController::class, "history"]);
+  Route::get('/kritik-dan-saran', [DashboardController::class, "kritikDanSaran"]);
+  Route::post('/kritik-dan-saran', [DashboardController::class, "kritikDanSaranPost"]);
 
   // PPSDA
   Route::get("/ppsda", [UserPpsdaController::class, "index"]);

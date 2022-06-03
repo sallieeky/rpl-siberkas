@@ -238,6 +238,15 @@ input[type=number] {
           </li>
           <span class="border-bottom"></span>
           <li class="nav-item mt-2">
+            <a href="/kritik-dan-saran" class="nav-link">
+              <i class="nav-icon fas fa-comment-dots"></i>
+              <p>
+                Kritik dan Saran
+              </p>
+            </a>
+          </li>
+          <span class="border-bottom"></span>
+          <li class="nav-item mt-2">
             <a href="/logout" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
