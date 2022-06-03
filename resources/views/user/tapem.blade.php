@@ -13,22 +13,22 @@
               </div>
               <div class="card-body">
                   <h4>Pilih berkas yang ingin diajukan</h4>
-                  <a href="/ppsda/keperluan-pbb">
+                  <a href="/tapem/formulir-pendaftaran-perpindahan-penduduk">
                     <div class="callout callout-info">
                       <h5><i class="fas fa-file-alt"></i> <strong>Formulir Pendaftaran Perpindahan Penduduk</strong></h5>
-                      <p>Isi form untuk mengajukan berkas surat keterangan cek kesehatan</p>
+                      <p>Isi form untuk mengajukan pendaftaran perpindahan penduduk</p>
                     </div>
                   </a>
-                  <a href="/ppsda/keterangan-harga-bangunan">
+                  <a href="/tapem/formulir-meminta-surat-keterangan">
                     <div class="callout callout-info">
                       <h5><i class="fas fa-file-alt"></i> <strong>Formulir Meminta Surat Keterangan</strong></h5>
-                      <p>Isi form untuk mengajukan berkas keterangan usaha</p>
+                      <p>Isi form untuk mengajukan surat keterangan</p>
                     </div>
                   </a>
-                  <a href="/ppsda/keterangan-memiliki-bangunan">
+                  <a href="/tapem/formulir-keterangan-kurang-mampu">
                     <div class="callout callout-info">
                       <h5><i class="fas fa-file-alt"></i> <strong>Formulir Keterangan Kurang Mampu</strong></h5>
-                      <p>Isi form untuk mengajukan berkas pengantar nikah</p>
+                      <p>Isi form untuk mengajukan keterangan kurang mampu</p>
                     </div>
                   </a>
               </div>

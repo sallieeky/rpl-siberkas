@@ -57,3 +57,12 @@ Route::post("/kesos/pengantar-nikah", [UserKesosController::class, "pengantarNik
 
 // TAPEM
 Route::get("/tapem", [UserTapemController::class, "index"]);
+
+Route::get("/tapem/formulir-pendaftaran-perpindahan-penduduk", [UserTapemController::class, "formulirPendaftaranPerpindahanPenduduk"]);
+Route::post("/tapem/formulir-pendaftaran-perpindahan-penduduk", [UserTapemController::class, "formulirPendaftaranPerpindahanPendudukPost"]);
+
+Route::get("/tapem/formulir-meminta-surat-keterangan", [UserTapemController::class, "formulirMemintaSuratKeterangan"]);
+Route::post("/tapem/formulir-meminta-surat-keterangan", [UserTapemController::class, "formulirMemintaSuratKeteranganPost"]);
+
+Route::get("/tapem/formulir-keterangan-kurang-mampu", [UserTapemController::class, "formulirKeteranganKurangMampu"]);
+Route::post("/tapem/formulir-keterangan-kurang-mampu", [UserTapemController::class, "formulirKeteranganKurangMampuPost"]);
