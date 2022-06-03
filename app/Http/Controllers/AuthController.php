@@ -15,23 +15,22 @@ class AuthController extends Controller
     public function loginPost(Request $request)
     {
         $request->validate([
-            "email" => "required|email",
+            "nik" => "required",
             "password" => "required"
         ]);
 
-        $credentials = $request->only(["email", "password"]);
+        $credentials = $request->only(["nik", "password"]);
 
         if (auth()->attempt($credentials)) {
             return redirect("/");
         }
 
-        return redirect()->back()->withErrors(["email" => "Invalid credentials"]);
+        return redirect()->back()->with("pesan", "NIK atau Password salah");
     }
 
     public function logout()
     {
         Auth::logout();
-
         return redirect("/login");
     }
 }

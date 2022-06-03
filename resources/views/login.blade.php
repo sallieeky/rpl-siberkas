@@ -4,12 +4,18 @@
     <div class="col-lg-12">
         <main class="form-registration">
             <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
+            {{-- make alert --}}
+            @if(session("pesan"))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{ session("pesan") }}</strong>
+            </div>
+            @endif
             <form action="/login" method="post">
                 @csrf
                 <div class="mb-3">
-                    <label for="username" class="form-label">User Name / Email</label>
-                    <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="email" placeholder="Masukkan username" required value="{{ old('username') }}">
-                    @error('username')
+                    <label for="nik" class="form-label">NIK</label>
+                    <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik" placeholder="Masukkan NIK" required value="{{ old('nik') }}">
+                    @error('nik')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

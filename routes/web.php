@@ -48,5 +48,8 @@ Route::get("/kesos", [UserKesosController::class, "index"]);
 Route::get("/kesos/skck", [UserKesosController::class, "skck"]);
 Route::post("/kesos/skck", [UserKesosController::class, "skckPost"]);
 
+Route::get("/kesos/keterangan-usaha", [UserKesosController::class, "keteranganUsaha"]);
+Route::post("/kesos/keterangan-usaha", [UserKesosController::class, "keteranganUsahaPost"]);
+
 // TAPEM
 Route::get("/tapem", [UserTapemController::class, "index"]);

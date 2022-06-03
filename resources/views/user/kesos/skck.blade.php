@@ -24,19 +24,19 @@
                         <div class="col-md-4">
                           <div class="form-group">
                               <label for="nama">Nama</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required value="{{ old("nama") }}">
+                              <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required value="{{ Auth::user()->nama }}">
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                               <label for="nama">NIK</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK" required value="{{ old("nik") }}">
+                              <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK" required value="{{ Auth::user()->nik }}">
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                               <label for="ttl">Tempat Tanggal Lahir</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="ttl" name="ttl" placeholder="Contoh: Balikpapan, 1 Januari 1995" required value="{{ old("ttl") }}">
+                              <input type="text" class="form-control" id="ttl" name="ttl" placeholder="Contoh: Balikpapan, 1 Januari 1995" required value="{{ Auth::user()->ttl }}">
                           </div>
                       </div>
 
@@ -44,13 +44,13 @@
                         <div class="col-md-6">
                           <div class="form-group">
                               <label for="alamat">Alamat</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" required value="{{ old("alamat") }}">
+                              <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" required value="{{ Auth::user()->alamat }}">
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
                               <label for="no_telp">Nomor Telepon/Hp</label><span class="text-danger">*</span>
-                              <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="Nomor Telepon" required value="{{ old("no_telp") }}">
+                              <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="Nomor Telepon" required value="{{ Auth::user()->no_telp }}">
                           </div>
                         </div>
                       </div>
@@ -61,8 +61,8 @@
                               <label for="jenis_kelamin">Jenis Kelamin</label><span class="text-danger">*</span>
                               <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" required>
                                 <option value="">Pilih Jenis Kelamin</option>
-                                <option value="Laki-laki" {{ old("jenis_kelamin") == "Laki-laki" ? "selected" : "" }}>Laki-laki</option>
-                                <option value="Perempuan" {{ old("jenis_kelamin") == "Perempuan" ? "selected" : "" }}>Perempuan</option>
+                                <option value="Laki-laki" {{ Auth::user()->jenis_kelamin == "Laki-laki" ? "selected" : "" }}>Laki-laki</option>
+                                <option value="Perempuan" {{ Auth::user()->jenis_kelamin == "Perempuan" ? "selected" : "" }}>Perempuan</option>
                               </select>
                           </div>
                         </div>

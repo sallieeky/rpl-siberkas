@@ -40,6 +40,7 @@ class UserKesosController extends Controller
 
         $request->file("surat_pengantar_file")->storeAs("public/kesos/surat_pengantar", $request->file("surat_pengantar_file")->getClientOriginalName());
         $request->file("ktp_file")->storeAs("public/kesos/ktp", $request->file("ktp_file")->getClientOriginalName());
+
         // $request["user_id"] = Auth::user()->id;
         $request["user_id"] = 0;
         $request["surat_pengantar"] = $request->file("surat_pengantar_file")->getClientOriginalName();
