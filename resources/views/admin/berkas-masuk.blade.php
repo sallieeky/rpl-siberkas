@@ -39,7 +39,7 @@
                           <td>{{ $value["bidang"] }}</td>
                           {{-- status select --}}
                           <td>
-                            <select class="form-control" name="status" id="status"">
+                            <select class="form-control" name="status" id="status-{{ $key }}-{{ $vl->id }}">
                               @foreach ($status as $st)
                                 @if ($vl->status == $st)
                                   <option value="{{ $st }}" selected>{{ $st }}</option>
@@ -52,7 +52,14 @@
                           {{-- berkas balasan --}}
                           <td>
                             @if($vl->berkas_balasan)
-                            <a href="{{ asset("storage/berkas_balasan/" . $vl->berkas_balasan) }}" target="_blank">Lihat Berkas</a>
+                            <a href="{{ asset("storage/berkas_balasan/" . $vl->berkas_balasan) }}" target="_blank">Lihat Berkas</a> | 
+                            <form action="/upload-berkas-balasan" id="form" method="POST" enctype="multipart/form-data" class="d-inline">
+                              @csrf
+                              <input type="hidden" name="id" value="{{ $vl->id }}">
+                              <input type="hidden" name="nama" value="{{ $value["nama"] }}">
+                              <label for="berkas_balasan" class="btn-link" style="cursor: pointer; font-weight: normal">ubah Berkas</label>
+                              <input type="file" name="berkas_balasan" style="display: none" id="berkas_balasan" class="form-control">
+                            </form>
                             @else
                             <form action="/upload-berkas-balasan" id="form" method="POST" enctype="multipart/form-data">
                               @csrf
@@ -107,6 +114,39 @@ $(function () {
     $("#berkas_balasan").change(function(){
       $("#form").submit();
     });
+
+    // for loop untuk mengubah status
+    @foreach ($data as $key => $value)
+      @foreach ($value["data"] as $vl)
+        $("#status-{{ $key }}-{{ $vl->id }}").change(function(){
+          console.log("AWdW");
+          var status = $(this).val();
+          var id = "{{ $vl->id }}";
+          var nama = "{{ $value["nama"] }}";
+          var bidang = "{{ $value["bidang"] }}";
+          var nik = "{{ $vl->nik }}";
+          var nama_berkas = "{{ $value["nama"] }}";
+          var url = "/update-status";
+          $.ajax({
+            url: url,
+            type: "POST",
+            data: {
+              "_token": "{{ csrf_token() }}",
+              status: status,
+              id: id,
+              nama: nama,
+              bidang: bidang,
+              nik: nik,
+              nama_berkas: nama_berkas
+            },
+            success: function(data){
+            }, error: function(data){
+            }
+          });
+        });
+      @endforeach
+    @endforeach
   });
 </script>
+
 @endsection

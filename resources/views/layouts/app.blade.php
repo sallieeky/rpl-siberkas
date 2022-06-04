@@ -98,6 +98,7 @@ input[type=number] {
             </a>
           </li>
           <span class="border-bottom"></span>
+          @if(Auth::user()->role == "user")
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               {{-- <i class="nav-icon fas fa-tachometer-alt"></i> --}}
@@ -246,6 +247,7 @@ input[type=number] {
             </a>
           </li>
           <span class="border-bottom"></span>
+          @elseif (Auth::user()->role == 'admin')
           {{-- halaman admin --}}
           <li class="nav-item mt-2">
             <a href="/berkas-masuk" class="nav-link">
@@ -255,6 +257,7 @@ input[type=number] {
               </p>
             </a>
           </li>
+          @endif
           <span class="border-bottom"></span>
           <li class="nav-item mt-2">
             <a href="/logout" class="nav-link">

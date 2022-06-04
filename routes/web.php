@@ -71,6 +71,7 @@ Route::middleware(['auth'])->group(function () {
   // ADMIN
   Route::get("/berkas-masuk", [AdminController::class, "berkasMasuk"]);
   Route::post("/upload-berkas-balasan", [AdminController::class, "uploadBerkasBalasan"]);
+  Route::post("/update-status", [AdminController::class, "updateStatus"]);
 });
 
 

@@ -48,8 +48,8 @@
                             </td>
                           @elseif ($vl->status == "Diperiksa")
                             <td>
-                              <span class="badge badge-success">
-                                <i class="fas fa-check"></i>
+                              <span class="badge badge-info">
+                                <i class="fas fa-info"></i>
                                 {{ $vl->status }}
                               </span>
                             </td>
@@ -62,8 +62,8 @@
                             </td>
                           @elseif ($vl->status == "Selesai")
                             <td>
-                              <span class="badge badge-info">
-                                <i class="fas fa-info"></i>
+                              <span class="badge badge-success">
+                                <i class="fas fa-check"></i>
                                 {{ $vl->status }}
                               </span>
                             </td>
@@ -79,7 +79,7 @@
                             </td>
                           @else
                           <td>
-                            <a href="#" class="btn btn-sm btn-primary">
+                            <a href="{{ asset("storage/berkas_balasan/" . $vl->berkas_balasan) }}" target="_blank" class="btn btn-sm btn-primary">
                               <i class="fas fa-download"></i>
                               Download Berkas Balasan
                             </a>
@@ -92,8 +92,7 @@
                             </td>
                           @else
                             <td>
-                              <span class="badge badge-success">
-                                <i class="fas fa-check"></i>
+                              <span class="text-disabled">
                                 {{ $vl->admin->nama }}
                               </span>
                             </td>
