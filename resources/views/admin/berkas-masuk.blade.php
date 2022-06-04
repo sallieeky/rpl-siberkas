@@ -66,7 +66,7 @@
                               @csrf
                               <input type="hidden" name="id" value="{{ $vl->id }}">
                               <input type="hidden" name="nama" value="{{ $value["nama"] }}">
-                              <label for="berkas_balasan" class="btn btn-link">Upload Berkas</label>
+                              <label for="berkas_balasan" class="btn-link" style="cursor: pointer; font-weight: normal">Upload Berkas</label>
                               <input type="file" name="berkas_balasan" style="display: none" id="berkas_balasan" class="form-control">
                             </form>
                             @endif

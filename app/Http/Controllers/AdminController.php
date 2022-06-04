@@ -86,13 +86,13 @@ class AdminController extends Controller
                 ],
             ];
         }
-
         $status = ["Diterima", "Diperiksa", "Ditolak", "Selesai"];
         return view('admin.berkas-masuk', compact('data', 'status'));
     }
 
     public function uploadBerkasBalasan(Request $request)
     {
+        return $request;
         $user = "";
         if ($request->nama == "PBB") {
             $pbb = Pbb::find($request->id);
@@ -117,6 +117,7 @@ class AdminController extends Controller
             $user = $keterangan_memiliki_bangunan->user;
         } else if ($request->nama == "Keterangan Memiliki Tanah") {
             $keterangan_memiliki_tanah = KeteranganMemilikiTanah::find($request->id);
+            return $keterangan_memiliki_tanah;
             $keterangan_memiliki_tanah->berkas_balasan = $request->file("berkas_balasan")->getClientOriginalName();
             $keterangan_memiliki_tanah->status = "Selesai";
             $keterangan_memiliki_tanah->admin_id = Auth::user()->id;
