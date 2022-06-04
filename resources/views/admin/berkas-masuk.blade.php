@@ -56,6 +56,7 @@
                             <form action="/upload-berkas-balasan" id="form" method="POST" enctype="multipart/form-data" class="d-inline">
                               @csrf
                               <input type="hidden" name="id" value="{{ $vl->id }}">
+                              <input type="hidden" name="user_id" value="{{ $vl->user_id }}">
                               <input type="hidden" name="nama" value="{{ $value["nama"] }}">
                               <label for="berkas_balasan" class="btn-link" style="cursor: pointer; font-weight: normal">ubah Berkas</label>
                               <input type="file" name="berkas_balasan" style="display: none" id="berkas_balasan" class="form-control">
@@ -119,7 +120,7 @@ $(function () {
     @foreach ($data as $key => $value)
       @foreach ($value["data"] as $vl)
         $("#status-{{ $key }}-{{ $vl->id }}").change(function(){
-          console.log("AWdW");
+          $("#status-{{ $key }}-{{ $vl->id }}").prop("disabled", true);
           var status = $(this).val();
           var id = "{{ $vl->id }}";
           var nama = "{{ $value["nama"] }}";
@@ -140,7 +141,11 @@ $(function () {
               nama_berkas: nama_berkas
             },
             success: function(data){
+              // console.log(data);
+              $("#status-{{ $key }}-{{ $vl->id }}").prop("disabled", false);
             }, error: function(data){
+              // console.log(data);
+              $("#status-{{ $key }}-{{ $vl->id }}").prop("disabled", false);
             }
           });
         });

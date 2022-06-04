@@ -7,6 +7,7 @@ use App\Http\Controllers\UserKesosController;
 use App\Http\Controllers\UserPpsdaController;
 use App\Http\Controllers\UserTapemController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -78,3 +79,12 @@ Route::middleware(['auth'])->group(function () {
 Route::get("/login", [AuthController::class, "login"])->name("login")->middleware("guest");
 Route::post("/login", [AuthController::class, "loginPost"]);
 Route::get("/logout", [AuthController::class, "logout"]);
+
+Route::get('/kirim', function () {
+  Mail::send('mail.tes', [], function ($message) {
+    $message->from(env("MAIL_FROM_ADDRESS"), env("MAIL_FROM_NAME"));
+    $message->to('sallieeky@gmail.com', 'Sallie Eky');
+    $message->subject("Tes Kirim Dari SIBERKAS");
+  });
+  return "BERHASIL";
+});
