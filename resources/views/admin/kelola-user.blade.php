@@ -125,7 +125,18 @@
                   </select>
                 </div>
               </div>
+              {{-- role using select --}}
               <div class="col-md-6">
+                <div class="form-group">
+                  <label for="role">Role</label>
+                  <select class="form-control" id="role" name="role">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                  </select>
+                </div>
+              </div>
+              {{-- bidang using select(ppsdam, kesos, tapem) --}}
+              <div class="col-md-12">
                 <div class="form-group">
                   <label for="alamat">Alamat</label>
                   <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">

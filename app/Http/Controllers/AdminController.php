@@ -294,6 +294,12 @@ class AdminController extends Controller
             'nik' => 'required|unique:users,nik',
         ]);
 
+        if ($request->role == "user") {
+            $request["bidang"] = "user";
+        } else {
+            $request["bidang"] = Auth::user()->bidang;
+        }
+
         if (!$request->password) {
             $request["password"] = bcrypt("password");
         } else {
