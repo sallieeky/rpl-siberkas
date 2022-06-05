@@ -2,6 +2,167 @@
 @section('content')
 
 
+
+  @isset($skck)
+    
+  <div class="row mt-3">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fab fa-wpforms"></i>
+                    Formulir KESOS - Surat Keterangan Cek Kesehatan
+                </div>
+            </div>
+            <div class="card-body">
+                @if(session("pesan"))
+                  <div class="alert alert-success">
+                {{ session("pesan") }}
+                </div>
+                @endif
+                <form action="/kesos/skck" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <h4 class="mb-3">Data Pemohon</h4>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nama">Nama</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" disabled value="{{ $skck->nama }}" >
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nama">NIK</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK" disabled value="{{ $skck->nik }}" >
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ttl">Tempat Tanggal Lahir</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="ttl" name="ttl" placeholder="Tempat Tanggal Lahir" disabled value="{{ $skck->ttl }}" >
+                        </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" disabled value="{{ $skck->alamat }}" >
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="no_telp">Nomor Telepon/Hp</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="Nomor Telepon/Hp" disabled value="{{ $skck->no_telp }}" >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="jenis_kelamin">Jenis Kelamin</label><span class="text-danger">*</span>
+                            <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" disabled>
+                              <option value="Laki-laki" {{ $skck->jenis_kelamin == "Laki-laki" ? "selected" : "" }}>Laki-laki</option>
+                              <option value="Perempuan" {{ $skck->jenis_kelamin == "Perempuan" ? "selected" : "" }}>Perempuan</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="status_perkawinan">Status Perkawinan</label><span class="text-danger">*</span>
+                            <select class="form-control" id="status_perkawinan" name="status_perkawinan" disabled>
+                              <option value="Belum Kawin" {{ $skck->status_perkawinan == "Belum Kawin" ? "selected" : "" }}>Belum Kawin</option>
+                              <option value="Kawin" {{ $skck->status_perkawinan == "Kawin" ? "selected" : "" }}>Kawin</option>
+                              <option value="Cerai Hidup" {{ $skck->status_perkawinan == "Cerai Hidup" ? "selected" : "" }}>Cerai Hidup</option>
+                              <option value="Cerai Mati" {{ $skck->status_perkawinan == "Cerai Mati" ? "selected" : "" }}>Cerai Mati</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="agama">Agama</label><span class="text-danger">*</span>
+                            <select class="form-control" id="agama" name="agama" disabled>
+                              <option>{{ $skck->agama }}</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="pendidikan">Pendidikan</label><span class="text-danger">*</span>
+                            <select class="form-control" id="pendidikan" name="pendidikan" disabled>
+                              <option>{{ $skck->pendidikan }}</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="warga_negara">Warga Negara</label><span class="text-danger">*</span>
+                            <select class="form-control" id="warga_negara" name="warga_negara" disabled>
+                              <option>{{ $skck->warga_negara }}</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="pekerjaan">Pekerjaan</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" placeholder="Pekerjaan" disabled value="{{ $skck->pekerjaan }}">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="kelurahan">Kelurahan</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Kelurahan" disabled value="{{ $skck->kelurahan }}">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="kecamatan">Kecamatan</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Kecamatan" disabled value="{{ $skck->kecamatan }}">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="maksud">Maksud</label><span class="text-danger">*</span>
+                            <textarea class="form-control" id="maksud" name="maksud" placeholder="Maksud" disabled>{{ $skck->maksud }}</textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <h4 class="my-3">Berkas Pendukung</h4>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <a href="{{ asset('storage/kesos/surat_pengantar/'.$skck->surat_pengantar) }}" target="_blank" class="btn btn-link">
+                              <i class="fas fa-file-pdf"></i>
+                              Surat Pengantar Dari RT
+                            </a>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <a href="{{ asset('storage/kesos/ktp/'.$skck->ktp) }}" target="_blank" class="btn btn-link">
+                              <i class="fas fa-file-pdf"></i>
+                              KTP
+                            </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      @if (Auth::user()->role == 'user')
+                        <a href="/history" class="btn btn-secondary">Kembali</a>
+                      @else
+                        <a href="/berkas-masuk" class="btn btn-secondary">Kembali</a>
+                      @endif
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  @else
   <div class="row mt-3">
       <div class="col-md-12">
           <div class="card">
@@ -171,6 +332,10 @@
           </div>
       </div>
   </div>
+
+
+
+  @endisset
     
 
 @endsection

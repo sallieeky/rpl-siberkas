@@ -53,27 +53,27 @@
                           <td>
                             @if($vl->berkas_balasan)
                             <a href="{{ asset("storage/berkas_balasan/" . $vl->berkas_balasan) }}" target="_blank">Lihat Berkas</a> | 
-                            <form action="/upload-berkas-balasan" id="form" method="POST" enctype="multipart/form-data" class="d-inline">
+                            <form action="/upload-berkas-balasan" id="form-{{ $key }}-{{ $vl->id }}" method="POST" enctype="multipart/form-data" class="d-inline">
                               @csrf
                               <input type="hidden" name="id" value="{{ $vl->id }}">
                               <input type="hidden" name="user_id" value="{{ $vl->user_id }}">
                               <input type="hidden" name="nama" value="{{ $value["nama"] }}">
-                              <label for="berkas_balasan" class="btn-link" style="cursor: pointer; font-weight: normal">ubah Berkas</label>
-                              <input type="file" name="berkas_balasan" style="display: none" id="berkas_balasan" class="form-control">
+                              <label for="berkas_balasan_{{ $key }}_{{ $vl->id }}" class="btn-link" style="cursor: pointer; font-weight: normal">ubah Berkas</label>
+                              <input type="file" name="berkas_balasan" style="display: none" id="berkas_balasan_{{ $key }}_{{ $vl->id }}" class="form-control">
                             </form>
                             @else
-                            <form action="/upload-berkas-balasan" id="form" method="POST" enctype="multipart/form-data">
+                            <form action="/upload-berkas-balasan" id="form-{{ $key }}-{{ $vl->id }}" method="POST" enctype="multipart/form-data">
                               @csrf
                               <input type="hidden" name="id" value="{{ $vl->id }}">
                               <input type="hidden" name="nama" value="{{ $value["nama"] }}">
-                              <label for="berkas_balasan" class="btn-link" style="cursor: pointer; font-weight: normal">Upload Berkas</label>
-                              <input type="file" name="berkas_balasan" style="display: none" id="berkas_balasan" class="form-control">
+                              <label for="berkas_balasan_{{ $key }}_{{ $vl->id }}" class="btn-link" style="cursor: pointer; font-weight: normal">Upload Berkas</label>
+                              <input type="file" name="berkas_balasan" style="display: none" id="berkas_balasan_{{ $key }}_{{ $vl->id }}" class="form-control">
                             </form>
                             @endif
                           </td>
                           
                           <td>
-                            <a href="/detail" class="btn btn-info btn-sm">
+                            <a href="/{{ strtolower($value["bidang"]) }}/{{ $key }}/detail/{{ $vl->id }}" class="btn btn-info btn-sm">
                               <i class="fas fa-eye"></i>
                             </a>
                           </td>
@@ -112,13 +112,12 @@ $(function () {
 
 <script>
   $(document).ready(function(){
-    $("#berkas_balasan").change(function(){
-      $("#form").submit();
-    });
-
     // for loop untuk mengubah status
     @foreach ($data as $key => $value)
       @foreach ($value["data"] as $vl)
+        $("#berkas_balasan_{{ $key }}_{{ $vl->id }}").change(function(){
+              $("#form-{{ $key }}-{{ $vl->id }}").submit();
+            }); 
         $("#status-{{ $key }}-{{ $vl->id }}").change(function(){
           $("#status-{{ $key }}-{{ $vl->id }}").prop("disabled", true);
           var status = $(this).val();

@@ -7,6 +7,7 @@ use App\Models\PengantarNikah;
 use App\Models\Skck;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class UserKesosController extends Controller
 {
@@ -18,6 +19,10 @@ class UserKesosController extends Controller
     public function skck()
     {
         return view("user.kesos.skck");
+    }
+    public function skckDetail(Skck $skck)
+    {
+        return view("user.kesos.skck", compact("skck"));
     }
     public function skckPost(Request $request)
     {
@@ -48,6 +53,7 @@ class UserKesosController extends Controller
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
         Skck::create($request->all());
+        $this->kirimEmail("SKCK");
 
         return back()->with("pesan", "Pengajuan SKCK Anda telah dikirim. Tunggu konfirmasi dari admin.");
     }
@@ -55,6 +61,10 @@ class UserKesosController extends Controller
     public function keteranganUsaha()
     {
         return view("user.kesos.keterangan_usaha");
+    }
+    public function keteranganUsahaDetail(KeteranganUsaha $ku)
+    {
+        return view("user.kesos.keterangan_usaha", compact("ku"));
     }
     public function keteranganUsahaPost(Request $request)
     {
@@ -83,6 +93,7 @@ class UserKesosController extends Controller
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
         KeteranganUsaha::create($request->all());
+        $this->kirimEmail("Keterangan Usaha");
 
         return back()->with("pesan", "Pengajuan Keterangan Usaha Anda telah dikirim. Tunggu konfirmasi dari admin.");
     }
@@ -90,6 +101,10 @@ class UserKesosController extends Controller
     public function pengantarNikah()
     {
         return view("user.kesos.pengantar_nikah");
+    }
+    public function pengantarNikahDetail(PengantarNikah $pn)
+    {
+        return view("user.kesos.pengantar_nikah", compact("pn"));
     }
     public function pengantarNikahPost(Request $request)
     {
@@ -135,6 +150,21 @@ class UserKesosController extends Controller
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
         PengantarNikah::create($request->all());
+        $this->kirimEmail("Pengantar Nikah");
         return back()->with("pesan", "Pengajuan Pengantar Nikah Anda telah dikirim. Tunggu konfirmasi dari admin.");
+    }
+
+    public function kirimEmail($nama_berkas)
+    {
+        $user = Auth::user();
+        $data = [
+            "user" => $user,
+            "nama_berkas" => $nama_berkas,
+        ];
+        Mail::send('mail.kirim_pengajuan', $data, function ($message) use ($user, $nama_berkas) {
+            $message->from(env("MAIL_FROM_ADDRESS"), env("MAIL_FROM_NAME"));
+            $message->to($user->email, $user->nama);
+            $message->subject("Berhasil Mengirim Pengajuan Berkas " . $nama_berkas);
+        });
     }
 }

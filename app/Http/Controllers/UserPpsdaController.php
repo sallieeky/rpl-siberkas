@@ -9,6 +9,7 @@ use App\Models\KeteranganNjop;
 use App\Models\Pbb;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class UserPpsdaController extends Controller
 {
@@ -20,6 +21,10 @@ class UserPpsdaController extends Controller
     public function keperluanPbb()
     {
         return view("user.ppsda.keperluan-pbb");
+    }
+    public function keperluanPbbDetail(Pbb $pbb)
+    {
+        return view("user.ppsda.keperluan-pbb", compact("pbb"));
     }
     public function keperluanPbbPost(Request $request)
     {
@@ -60,12 +65,17 @@ class UserPpsdaController extends Controller
         // $request["user_id"] = 0;
 
         Pbb::create($request->all());
+        $this->kirimEmail("Keperluan PBB");
         return back()->with("pesan", "Pengajuan berkas berhasil");
     }
 
     public function keteranganHargaBangunan()
     {
         return view("user.ppsda.keterangan-harga-bangunan");
+    }
+    public function keteranganHargaBangunanDetail(KeteranganHargaBangunan $khb)
+    {
+        return view("user.ppsda.keterangan-harga-bangunan", compact("khb"));
     }
     public function keteranganHargaBangunanPost(Request $request)
     {
@@ -97,12 +107,17 @@ class UserPpsdaController extends Controller
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
         KeteranganHargaBangunan::create($request->all());
+        $this->kirimEmail("Keterangan Harga Bangunan");
         return back()->with("pesan", "Pengajuan berkas berhasil");
     }
 
     public function keteranganMemilikiBangunan()
     {
         return view("user.ppsda.keterangan-memiliki-bangunan");
+    }
+    public function keteranganMemilikiBangunanDetail(KeteranganMemilikiBangunan $kmb)
+    {
+        return view("user.ppsda.keterangan-memiliki-bangunan", compact("kmb"));
     }
     public function keteranganMemilikiBangunanPost(Request $request)
     {
@@ -137,12 +152,17 @@ class UserPpsdaController extends Controller
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
         KeteranganMemilikiBangunan::create($request->all());
+        $this->kirimEmail("Keterangan Memiliki Bangunan");
         return back()->with("pesan", "Pengajuan berkas berhasil");
     }
 
     public function keteranganMemilikiTanah()
     {
         return view("user.ppsda.keterangan-memiliki-tanah");
+    }
+    public function keteranganMemilikiTanahDetail(KeteranganMemilikiTanah $kmt)
+    {
+        return view("user.ppsda.keterangan-memiliki-tanah", compact("kmt"));
     }
     public function keteranganMemilikiTanahPost(Request $request)
     {
@@ -175,12 +195,17 @@ class UserPpsdaController extends Controller
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
         KeteranganMemilikiTanah::create($request->all());
+        $this->kirimEmail("Keterangan Memiliki Tanah");
         return back()->with("pesan", "Pengajuan berkas berhasil");
     }
 
     public function keteranganNjop()
     {
         return view("user.ppsda.keterangan-njop");
+    }
+    public function keteranganNjopDetail(KeteranganNjop $njop)
+    {
+        return view("user.ppsda.keterangan-njop", compact("njop"));
     }
     public function keteranganNjopPost(Request $request)
     {
@@ -215,6 +240,21 @@ class UserPpsdaController extends Controller
         $request["ktp"] = $request->file("ktp_file")->getClientOriginalName();
 
         KeteranganNjop::create($request->all());
+        $this->kirimEmail("Keterangan Njop");
         return back()->with("pesan", "Pengajuan berkas berhasil");
+    }
+
+    public function kirimEmail($nama_berkas)
+    {
+        $user = Auth::user();
+        $data = [
+            "user" => $user,
+            "nama_berkas" => $nama_berkas,
+        ];
+        Mail::send('mail.kirim_pengajuan', $data, function ($message) use ($user, $nama_berkas) {
+            $message->from(env("MAIL_FROM_ADDRESS"), env("MAIL_FROM_NAME"));
+            $message->to($user->email, $user->nama);
+            $message->subject("Berhasil Mengirim Pengajuan Berkas " . $nama_berkas);
+        });
     }
 }

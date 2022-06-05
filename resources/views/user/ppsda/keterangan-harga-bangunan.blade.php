@@ -2,6 +2,150 @@
 @section('content')
 
 
+  @isset($khb)
+  <div class="row mt-3">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fab fa-wpforms"></i>
+                    Formulir PPSDA - Keterangan Harga Bangunan
+                </div>
+            </div>
+            <div class="card-body">
+                @if(session("pesan"))
+                <div class="alert alert-success">
+                  {{ session("pesan") }}
+                </div>
+                @endif
+                <form action="/ppsda/keterangan-harga-bangunan" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <h4 class="mb-3">Data Pemohon</h4>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nama">Nama</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" disabled value="{{ $khb->nama }}">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nama">NIK</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK" disabled value="{{ $khb->nik }}">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ttl">Tempat Tanggal Lahir</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="ttl" name="ttl" placeholder="Tempat Tanggal Lahir" disabled value="{{ $khb->ttl }}">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" disabled value="{{ $khb->alamat }}">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="no_telp">Nomor Telepon/Hp</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="Nomor Telepon/Hp" disabled value="{{ $khb->no_telp }}">
+                        </div>
+                      </div>
+                    </div>
+
+                    <h4 class="my-3">Data Berkas</h4>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <label for="pilihan">ID Surat</label><span class="text-danger">*</span>
+                        <div class="input-group mb-3">
+                          <select class="btn btn-outline-secondary dropdown-toggle" id="pilihan" name="pilihan" disabled>
+                            <option value="{{ $khb->pilihan }}">{{ $khb->pilihan }}</option>
+                          </select>
+                          <input type="text" name="nilai" class="form-control" disabled aria-label="Text input with dropdown button" value="{{ $khb->nilai }}">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nama_pemilik">Nama Pemilik</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="nama_pemilik" name="nama_pemilik" placeholder="Nama Pemilik" disabled value="{{ $khb->nama_pemilik }}">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="tanggal">Tanggal</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="tanggal" name="tanggal" placeholder="Tanggal" disabled value="{{ $khb->tanggal }}">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="izin_bangunan">Izin Bangunan</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="izin_bangunan" name="izin_bangunan" placeholder="Izin Bangunan" disabled value="{{ $khb->izin_bangunan }}">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="alamat_objek">Alamat Objek</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="alamat_objek" name="alamat_objek" placeholder="Alamat Objek" disabled value="{{ $khb->alamat_objek }}">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="jenis_bangunan">Jenis Bangunan</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="jenis_bangunan" name="jenis_bangunan" placeholder="Jenis Bangunan" disabled value="{{ $khb->jenis_bangunan }}">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="harga_tanah">Harga Tanah</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="harga_tanah" name="harga_tanah" placeholder="Harga Tanah" disabled value="{{ $khb->harga_tanah }}">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="harga_bangunan">Harga Bangunan</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" id="harga_bangunan" name="harga_bangunan" placeholder="Harga Bangunan" disabled value="{{ $khb->harga_bangunan }}">
+                        </div>
+                      </div>
+                    </div>
+
+                    <h4 class="my-3">Berkas Pendukung</h4>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <a href="{{ asset('storage/ppsda/surat_pengantar/'.$khb->surat_pengantar) }}" target="_blank" class="btn btn-link">
+                              <i class="fas fa-file-pdf"></i>
+                              Surat Pengantar Dari RT
+                            </a>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <a href="{{ asset('storage/ppsda/ktp/'.$khb->ktp) }}" target="_blank" class="btn btn-link">
+                              <i class="fas fa-file-pdf"></i>
+                              KTP
+                            </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      @if (Auth::user()->role == 'user')
+                        <a href="/history" class="btn btn-secondary">Kembali</a>
+                      @else
+                        <a href="/berkas-masuk" class="btn btn-secondary">Kembali</a>
+                      @endif
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  @else
+
   <div class="row mt-3">
       <div class="col-md-12">
           <div class="card">
@@ -136,6 +280,8 @@
           </div>
       </div>
   </div>
+
+  @endisset
     
 
 @endsection

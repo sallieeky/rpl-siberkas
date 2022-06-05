@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     {
         User::create([
             "nama" => "Admin PPSDA",
-            "nik" => "123456789",
+            "nik" => "11111",
             "email" => "adminppsda@gmail.com",
             "password" => bcrypt("adminppsda"),
             "role" => "admin",
@@ -24,11 +24,19 @@ class UserSeeder extends Seeder
         ]);
         User::create([
             "nama" => "Admin KESOS",
-            "nik" => "234567890",
+            "nik" => "22222",
             "email" => "adminkesos@gmail.com",
             "password" => bcrypt("adminkesos"),
             "role" => "admin",
             "bidang" => "kesos",
+        ]);
+        User::create([
+            "nama" => "Admin TAPEM",
+            "nik" => "33333",
+            "email" => "adminkesos@gmail.com",
+            "password" => bcrypt("admintapem"),
+            "role" => "admin",
+            "bidang" => "tapem",
         ]);
         User::create([
             "nama" => "Sallie Mansurina",

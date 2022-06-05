@@ -98,7 +98,7 @@
                             </td>
                           @endif
                           <td>
-                            <a href="/detail" class="btn btn-info btn-sm">
+                            <a href="/{{ strtolower($value["bidang"]) }}/{{ $key }}/detail/{{ $vl->id }}" class="btn btn-info btn-sm">
                               <i class="fas fa-eye"></i>
                             </a>
                           </td>

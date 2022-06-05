@@ -6,6 +6,8 @@ use App\Models\FormulirKeteranganKurangMampu;
 use App\Models\FormulirMemintaSuratKeterangan;
 use App\Models\FormulirPendaftaranPerpindahanPenduduk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class UserTapemController extends Controller
 {
@@ -17,6 +19,10 @@ class UserTapemController extends Controller
     public function formulirPendaftaranPerpindahanPenduduk()
     {
         return view("user.tapem.formulir-pendaftaran-perpindahan-penduduk");
+    }
+    public function formulirPendaftaranPerpindahanPendudukDetail(FormulirPendaftaranPerpindahanPenduduk $fppp)
+    {
+        return view("user.tapem.formulir-pendaftaran-perpindahan-penduduk", compact("fppp"));
     }
     public function formulirPendaftaranPerpindahanPendudukPost(Request $request)
     {
@@ -45,12 +51,17 @@ class UserTapemController extends Controller
         $request["user_id"] = auth()->user()->id;
 
         FormulirPendaftaranPerpindahanPenduduk::create($request->all());
+        $this->kirimEmail("Formulir Pendaftaran Perpindahan Penduduk");
         return back()->with("pesan", "Formulir Pendafataran Perpindahan Penduduk Berhasil Dikirim, Silahkan Tunggu Konfirmasi dari Admin");
     }
 
     public function formulirMemintaSuratKeterangan()
     {
         return view("user.tapem.formulir-meminta-surat-keterangan");
+    }
+    public function formulirMemintaSuratKeteranganDetail(FormulirMemintaSuratKeterangan $fmsk)
+    {
+        return view("user.tapem.formulir-meminta-surat-keterangan", compact("fmsk"));
     }
     public function formulirMemintaSuratKeteranganPost(Request $request)
     {
@@ -77,12 +88,17 @@ class UserTapemController extends Controller
         $request["user_id"] = auth()->user()->id;
 
         FormulirMemintaSuratKeterangan::create($request->all());
+        $this->kirimEmail("Formulir Meminta Surat Keterangan");
         return back()->with("pesan", "Formulir Meminta Surat Keterangan Berhasil Dikirim, Silahkan Tunggu Konfirmasi dari Admin");
     }
 
     public function formulirKeteranganKurangMampu()
     {
         return view("user.tapem.formulir-keterangan-kurang-mampu");
+    }
+    public function formulirKeteranganKurangMampuDetail(FormulirKeteranganKurangMampu $fkkm)
+    {
+        return view("user.tapem.formulir-keterangan-kurang-mampu", compact("fkkm"));
     }
     public function formulirKeteranganKurangMampuPost(Request $request)
     {
@@ -117,6 +133,21 @@ class UserTapemController extends Controller
         $request["user_id"] = auth()->user()->id;
 
         FormulirKeteranganKurangMampu::create($request->all());
+        $this->kirimEmail("Formulir Keterangan Kurang Mampu");
         return back()->with("pesan", "Formulir Keterangan Kurang Mampu Berhasil Dikirim, Silahkan Tunggu Konfirmasi dari Admin");
+    }
+
+    public function kirimEmail($nama_berkas)
+    {
+        $user = Auth::user();
+        $data = [
+            "user" => $user,
+            "nama_berkas" => $nama_berkas,
+        ];
+        Mail::send('mail.kirim_pengajuan', $data, function ($message) use ($user, $nama_berkas) {
+            $message->from(env("MAIL_FROM_ADDRESS"), env("MAIL_FROM_NAME"));
+            $message->to($user->email, $user->nama);
+            $message->subject("Berhasil Mengirim Pengajuan Berkas " . $nama_berkas);
+        });
     }
 }
