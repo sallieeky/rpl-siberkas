@@ -48,5 +48,12 @@ class UserSeeder extends Seeder
             "no_telp" => "081234567890",
             "jenis_kelamin" => "Laki-laki",
         ]);
+
+        User::create([
+            "nama" => "Eksype",
+            "nik" => "647401010307060001",
+            "email" => "eksype72@gmail.com",
+            "password" => bcrypt("eky12345"),
+        ]);
     }
 }

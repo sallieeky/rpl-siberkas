@@ -10,9 +10,11 @@ use App\Models\KeteranganMemilikiBangunan;
 use App\Models\KeteranganMemilikiTanah;
 use App\Models\KeteranganNjop;
 use App\Models\KeteranganUsaha;
+use App\Models\KritikSaran;
 use App\Models\Pbb;
 use App\Models\PengantarNikah;
 use App\Models\Skck;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -272,5 +274,38 @@ class AdminController extends Controller
         });
 
         return response()->json(['success' => 'Data Berhasil Diubah']);
+    }
+
+    public function kritikDanSaran()
+    {
+        $data = KritikSaran::all();
+        return view('admin.kritik-dan-saran', compact('data'));
+    }
+
+    public function kelolaUser()
+    {
+        $users = User::where('role', '!=', 'admin')->get();
+        return view('admin.kelola-user', compact('users'));
+    }
+    public function kelolaUserTambah(Request $request)
+    {
+        $this->validate($request, [
+            'nama' => 'required',
+            'nik' => 'required|unique:users,nik',
+        ]);
+
+        if (!$request->password) {
+            $request["password"] = bcrypt("password");
+        } else {
+            $request["password"] = bcrypt($request->password);
+        }
+
+        User::create($request->all());
+        return back()->with('pesan', 'Berhasil Menambah Data User');
+    }
+    public function kelolaUserDelete(User $user)
+    {
+        $user->delete();
+        return redirect()->back()->with('pesan', 'Data User Berhasil Dihapus');
     }
 }

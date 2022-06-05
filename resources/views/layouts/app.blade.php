@@ -79,7 +79,7 @@ input[type=number] {
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
       <img src="{{ asset('template') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">SIBERKAS</span>
+      <span class="brand-text font-weight-light">SIBUK</span>
     </a>
 
     <!-- Sidebar -->
@@ -99,6 +99,15 @@ input[type=number] {
           </li>
           <span class="border-bottom"></span>
           @if(Auth::user()->role == "user")
+          <li class="nav-item">
+            <a href="/profile" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Profile
+              </p>
+            </a>
+          </li>
+          <span class="border-bottom"></span>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               {{-- <i class="nav-icon fas fa-tachometer-alt"></i> --}}
@@ -257,8 +266,26 @@ input[type=number] {
               </p>
             </a>
           </li>
-          @endif
           <span class="border-bottom"></span>
+          <li class="nav-item mt-2">
+            <a href="/kelola-user" class="nav-link">
+              <i class="nav-icon fas fa-users""></i>
+              <p>
+                Kelola User
+              </p>
+            </a>
+          </li>
+          <span class="border-bottom"></span>
+          <li class="nav-item mt-2">
+            <a href="/admin/kritik-dan-saran" class="nav-link">
+              <i class="nav-icon fas fa-comment-dots"></i>
+              <p>
+                Kritik dan Saran
+              </p>
+            </a>
+          </li>
+          <span class="border-bottom"></span>
+          @endif
           <li class="nav-item mt-2">
             <a href="/logout" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>
